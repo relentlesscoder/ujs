@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Learn Underscore.js</title>
+  <script type="text/javascript" src="js/underscore.js"></script>
+  <script type="text/javascript">
+    var someArray = ["name","patrick","d","w"];
+    _.each([1, 2, 3], function(num) { console.log(this[num]); }, someArray);
+
+    var someObject = {
+      firstName: "Wei",
+      lastName: "Shuai",
+      email: "relentless.code@gmail.com"
+    };
+    _.each(someObject, function(value, prop){ console.log(prop + ': ' + value) });
+
+    var sayName = function(key){
+      console.log(this[key].name);
+    };
+    var objArray = [{
+      name: "Lebron James"
+    }, {
+      name: "James Harden"
+    }, {
+      name: "Kevin Durant"
+    }];
+
+    var objArray1 = [{
+      name: "C#"
+    }, {
+      name: "JavaScript"
+    }, {
+      name: "MEAN.js"
+    }];
+    var cb = _.iteratee(sayName, objArray1);
+    _.each([0, 2], cb, objArray);
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
